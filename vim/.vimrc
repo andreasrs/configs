@@ -1,12 +1,9 @@
-" Pathogen
-filetype off " Pathogen needs to run before plugin indent on
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags() " generate helptags for everything in 'runtimepath'
-filetype plugin indent on
+call pathogen#infect()
 
 inoremap <Nul> <C-x><C-o>
 
 filetype on
+syntax on
 filetype plugin on
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -58,8 +55,6 @@ map nt :NERDTreeToggle<CR><Esc>
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-let g:debuggerPort = 9108
 
 set background=dark
 set t_Co=256
