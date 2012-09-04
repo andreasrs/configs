@@ -1,4 +1,7 @@
-configs
+Configs
 =======
 
-configs
+X11
+awesome WM
+vim
+
