@@ -22,7 +22,7 @@ URxvt*mapAlert:          true
 URxvt*visualBell:        true
 URxvt*urgentOnBell:      true
 URxvt*inheritPixmap:     true
-URxvt*shading:           88
+URxvt*shading:           35
 !
 !
 !!Black
