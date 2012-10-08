@@ -20,7 +20,7 @@ URxvt*cursorColor:      #868887
 URxvt*colorBD:          #b4927d
 URxvt*internalBorder:   3
 
-URxvt.perl-ext-common:  default,clipboard,matcher
+URxvt.perl-ext-common:  default,matcher,tabbed
 URxvt.transparent:      true
 URxvt*allow_bold:       true
 URxvt*depth:            24
@@ -31,6 +31,12 @@ URxvt*visualBell:       true
 URxvt*urgentOnBell:     true
 URxvt*inheritPixmap:    true
 URxvt*shading:          20
+
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    3
+URxvt.tabbed.tab-bg:    0
+
 !
 !
 !!Black

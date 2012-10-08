@@ -8,7 +8,8 @@
 
 -- {{{ Main
 theme = {}
-theme.wallpaper_cmd = { "awsetbg .config/awesome/wallpapers/Wallpapers_Archlinux/Wall_2.png" }
+-- theme.wallpaper_cmd = { "awsetbg .config/awesome/wallpapers/Wallpapers_Archlinux/Wall_2.png" }
+theme.wallpaper_cmd = { "awsetbg .config/awesome/wallpapers/Arch-2560x1600.png" }
 -- }}}
 
 -- {{{ Styles
