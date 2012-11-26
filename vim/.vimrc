@@ -1,5 +1,9 @@
-call pathogen#infect()
-
+filetype off " Pathogen needs to run before plugin indent on
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags() " generate helptags for everything in 'runtimepath'
+filetype plugin indent on
+"call pathogen#infect()
+"
 inoremap <Nul> <C-x><C-o>
 
 filetype on
@@ -16,14 +20,15 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd FileType php nnoremap <C-P> :!php %<CR>
+"autocmd FileType php nnoremap <C-P> :!php %<CR>
 autocmd FileType php nnoremap <C-L> :!php -l %<CR>
 autocmd FileType php nnoremap <C-U> :!phpunit %<CR>
 
 autocmd FileType php nmap <C-d> :call JCommentWriter()<CR>
 
 nmap <silent> <F6> :set number!<CR>
-
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
 set autoindent
 set copyindent
 set number
@@ -59,5 +64,7 @@ set expandtab
 set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
+let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 colorscheme solarized
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 

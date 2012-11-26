@@ -37,8 +37,6 @@ URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg:    3
 URxvt.tabbed.tab-bg:    0
 
-!
-!
 !!Black
 URxvt*color0:           #434343
 URxvt*color8:           #5d5f5e
