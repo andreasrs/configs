@@ -1,0 +1,9 @@
+[submodule "vim/.vim/bundle/ctrlp.vim.git"]
+	path = vim/.vim/bundle/ctrlp.vim.git
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim/.vim/bundle/nerdtree.git"]
+	path = vim/.vim/bundle/nerdtree.git
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "vim/.vim/bundle/vdebug.git"]
+	path = vim/.vim/bundle/vdebug.git
+	url = git@github.com:joonty/vdebug.git
