@@ -65,6 +65,7 @@ set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
-colorscheme solarized
+"colorscheme solarized
+colorscheme kolor
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
