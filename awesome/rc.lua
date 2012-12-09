@@ -340,12 +340,15 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
-      properties = { floating = true } },
-    --{ rule = { class = "spotify" },
-    --  properties = { tag = tags[1][8] } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
+      properties = { tag = tags[1][7], floating = true } },
     { rule = { class = "Spotify" },
+       properties = { tag = tags[1][7], floating = false } },
+    { rule = { class = "Skype" },
        properties = { tag = tags[1][8], floating = false } },
+    { rule = { class = "Chromium" },
+       properties = { tag = tags[1][2], floating = false } },
+    { rule = { class = "Blender" },
+       properties = { tag = tags[1][5], floating = false } },
 }
 -- }}}
 
