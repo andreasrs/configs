@@ -8,3 +8,6 @@
 	path = vim/.vim/bundle/vdebug.git
 	url = git@github.com:joonty/vdebug.git
 
+[submodule "vim/.vim/bundle/vim-kolor.git"]
+	path = vim/.vim/bundle/vim-kolor.git
+	url = git://github.com/zeis/vim-kolor.git
