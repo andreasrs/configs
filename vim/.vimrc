@@ -2,8 +2,7 @@ filetype off " Pathogen needs to run before plugin indent on
 call pathogen#infect()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
 filetype plugin indent on
-"call pathogen#infect()
-"
+
 inoremap <Nul> <C-x><C-o>
 
 filetype on
@@ -49,8 +48,6 @@ set noswapfile
 
 set pastetoggle=<F2>
 
-"set mouse=a
-
 map tn :tabnew<CR><Esc>
 map tc :tabclose<CR><Esc>
 map <S-h> gT
@@ -63,10 +60,9 @@ set expandtab
 
 set background=dark
 set t_Co=256
-let g:solarized_termcolors=256
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
-"colorscheme solarized
-colorscheme kolor
+
+colorscheme hemisu
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 

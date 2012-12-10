@@ -8,7 +8,7 @@ Xft.hinting:            1
 Xft.antialias:          1
 Xft.rgba:               rgb
 
-URxvt*termName:         xterm
+URxvt*termName:         rxvt-256color
 URxvt*background:       #171717
 URxvt*foreground:       #7e8082
 URxvt*scrollBar:        false
