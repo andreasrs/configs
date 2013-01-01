@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/andreass/.vim'
-let g:netrw_dirhist_2='/home/andreas/development/repositories/ImboClient/build'
-let g:netrw_dirhist_3='/home/andreas'
-let g:netrw_dirhist_4='/home/andreas/development/repositories/stackman/.git/modules'
-let g:netrw_dirhist_5='/home/andreas/.config/blender/2.65/scripts/addons'
