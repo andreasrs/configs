@@ -63,6 +63,6 @@ set t_Co=256
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
 
-colorscheme Tomorrow-Night
+colorscheme lucius
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 

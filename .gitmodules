@@ -23,3 +23,6 @@
 [submodule "vim/.vim/bundle/base16-vim.git"]
 	path = vim/.vim/bundle/base16-vim.git
 	url = git://github.com/chriskempson/base16-vim.git
+[submodule "vim/.vim/bundle/vim-lucius.git"]
+	path = vim/.vim/bundle/vim-lucius.git
+	url = git://github.com/jonathanfilip/vim-lucius.git
