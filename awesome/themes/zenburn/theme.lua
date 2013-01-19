@@ -9,11 +9,11 @@
 -- {{{ Main
 theme = {}
 --theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
-theme.wallpaper = ".config/awesome/wallpapers/blueredmosaic.jpg"
+theme.wallpaper = ".config/awesome/wallpapers/androidapple.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "sans 8"
+theme.font      = "terminus 10"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
