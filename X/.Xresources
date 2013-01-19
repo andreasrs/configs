@@ -1,14 +1,16 @@
 URxvt*title:            urxvt
-Rrxvt*font:             xft:Dina
+!! Rrxvt*font:             xft:Dina
+URxvt.font: xft:ProggyCleanTT-14
+!! :style=Regular
 
 Xft.autohint:           0
 Xft.lcdfilter:          lcddefault
-Xft.hintstyle:          hintfull
-Xft.hinting:            1
+!! Xft.hintstyle:          hintfull
+!! Xft.hinting:            1
 Xft.antialias:          1
 Xft.rgba:               rgb
 
-URxvt*termName:         rxvt-256color
+URxvt*termName:         urxvt
 URxvt*background:       #171717
 URxvt*foreground:       #7e8082
 URxvt*scrollBar:        false
