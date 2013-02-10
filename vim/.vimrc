@@ -1,8 +1,3 @@
-filetype off " Pathogen needs to run before plugin indent on
-call pathogen#infect()
-call pathogen#helptags() " generate helptags for everything in 'runtimepath'
-filetype plugin indent on
-
 inoremap <Nul> <C-x><C-o>
 
 filetype on
