@@ -13,6 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'joonty/vdebug'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 syntax on
@@ -70,6 +71,9 @@ set expandtab
 
 set background=dark
 set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
+
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
 
