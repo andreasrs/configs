@@ -1,8 +1,23 @@
-inoremap <Nul> <C-x><C-o>
+set nocompatible               " be iMproved
+filetype off                   " required!
 
-filetype on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"let Vundle manage Vundle | required!
+Bundle 'gmarik/vundle'
+
+"mah bundles
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'joonty/vdebug'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'Valloric/YouCompleteMe'
+
+filetype plugin indent on
 syntax on
-filetype plugin on
+
+inoremap <Nul> <C-x><C-o>
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -58,6 +73,5 @@ set t_Co=256
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
 
-colorscheme lucius
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
