@@ -61,8 +61,8 @@ set pastetoggle=<F2>
 
 map tn :tabnew<CR><Esc>
 map tc :tabclose<CR><Esc>
-map <S-h> gT
-map <S-l> gt
+"map <S-h> gT
+"map <S-l> gt
 map nt :NERDTreeToggle<CR><Esc>
 
 set tabstop=4
