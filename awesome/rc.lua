@@ -83,16 +83,33 @@ end
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 --tags = {}
-tags = {
-    name = { "code", "web", "irssi", "ssh", "gfx", "office", "media", "comms" },
-    layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
-}
+if screen.count() > 1 then
+    tags = {
+        name = { "code", "ssh", "gfx", "office", "media" },
+        layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+    }
 
-for s = 1, screen.count() do
+    tagsSecondary = {
+        name = { "web", "irssi", "comms" },
+        layout = { layouts[2], layouts[2], layouts[2] }
+    }
+
+    tags[1] = awful.tag(tags.name, 1, tags.layout)
+    tags[2] = awful.tag(tagsSecondary.name, 2, tagsSecondary.layout)
+else
+    tags = {
+        name = { "code", "web", "irssi", "ssh", "gfx", "office", "media", "comms" },
+        layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+    }
+
+    tags[1] = awful.tag(tags.name, 1, tags.layout)
+end
+
+-- for s = 1, screen.count() do
     -- Each screen has its own tag table.
     --tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
-    tags[s] = awful.tag(tags.name, s, tags.layout)
-end
+    -- tags[s] = awful.tag(tags.name, s, tags.layout)
+-- end
 -- }}}
 
 -- {{{ Menu
@@ -349,6 +366,14 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Rules
+if screen.count() > 1 then
+    skypeTag = tags[2][3]
+    chromiumTag = tags[2][1]
+else
+    skypeTag = tags[1][8]
+    chromiumTag = tags[1][2]
+end
+
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -366,15 +391,17 @@ awful.rules.rules = {
     { rule = { class = "Spotify" },
        properties = { tag = tags[1][7], floating = false } },
     { rule = { class = "Skype" },
-       properties = { tag = tags[1][8], floating = false } },
+       properties = { tag = skypeTag, floating = false } },
     { rule = { class = "Chromium" },
-       properties = { tag = tags[1][2], floating = false } },
+       properties = { tag = chromiumTag, floating = false } },
     { rule = { class = "Blender" },
        properties = { tag = tags[1][5], floating = false } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
 }
+
+
 -- }}}
 
 -- {{{ Signals
