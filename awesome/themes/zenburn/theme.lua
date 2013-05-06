@@ -9,7 +9,7 @@
 -- {{{ Main
 theme = {}
 --theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
-theme.wallpaper = ".config/awesome/wallpapers/arch_turquoise_1080_by_TestMAD.png"
+theme.wallpaper = ".config/awesome/wallpapers/Arch_Linux_Wallpaper.png"
 -- }}}
 
 -- {{{ Styles
