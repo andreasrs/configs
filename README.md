@@ -20,3 +20,5 @@ Terminal option #3: pacman -S terminus-font
 
 Web: pacman -S ttf-droid ttf-liberation
 
+Patched fonts for powerline: git://github.com/Lokaltog/powerline-fonts.git
+
