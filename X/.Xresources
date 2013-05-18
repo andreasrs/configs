@@ -1,5 +1,5 @@
 URxvt*title:            urxvt
-URxvt*font: xft:terminus:bold:pixelsize=14
+URxvt*font: xft:Terminus for Powerline:style=Bold:pixelsize=14
 
 Xft.autohint:           0
 Xft.lcdfilter:          lcddefault

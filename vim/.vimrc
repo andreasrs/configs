@@ -2,6 +2,7 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
 "let Vundle manage Vundle | required!
@@ -14,6 +15,7 @@ Bundle 'joonty/vdebug'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'Lokaltog/powerline.git'
 
 filetype plugin indent on
 syntax on
@@ -77,5 +79,10 @@ colorscheme solarized
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
 
+" powerline
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+set laststatus=2 " always show powerline
+
+" ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
