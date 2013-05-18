@@ -1,0 +1,81 @@
+URxvt*title:            urxvt
+!! Rrxvt*font:             xft:Dina
+!! URxvt.font: xft:ProggyCleanTT-14
+!! :style=Regular
+URxvt*font: xft:terminus:bold:pixelsize=14
+
+Xft.autohint:           0
+Xft.lcdfilter:          lcddefault
+Xft.hintstyle:          hintfull
+Xft.hinting:            1
+Xft.antialias:          1
+Xft.rgba:               rgb
+
+URxvt*scrollBar:        false
+URxvt*secondaryscroll:  true
+URxvt*matcher.button:   1
+URxvt*cursorBlink:      false
+URxvt*cursorUnderline:  false
+!URxvt*cursorColor:      #868887
+!URxvt*colorBD:          #b4927d
+URxvt*internalBorder:   3
+
+URxvt.perl-ext-common:  default,matcher,tabbed
+!URxvt.transparent:      true
+!URxvt.shading:          10
+URxvt*allow_bold:       true
+URxvt*depth:            24
+URxvt*dynamicColors:    on
+
+URxvt*mapAlert:         true
+URxvt*visualBell:       true
+URxvt*urgentOnBell:     true
+!URxvt*inheritPixmap:    true
+!URxvt*shading:          10
+
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    3
+URxvt.tabbed.tab-bg:    0
+
+!Colors
+URxvt*background:  #FEF9EC
+URxvt*foreground:  #6D727E
+
+URxvt*colorBD:     #3E424D
+URxvt*colorIT:     #3E424D
+URxvt*colorUL:     #3E424D
+
+URxvt*cursorColor: #007693
+
+! BLACK
+URxvt*color0:      #C5C1B4
+URxvt*color8:      #A1A6B2
+
+! WHITE
+URxvt*color7:      #3E424D
+URxvt*color15:     #282C36
+
+! RED
+URxvt*color1:      #E75C58
+URxvt*color9:      #B22B31
+
+! YELLOW
+URxvt*color3:      #A08A00
+URxvt*color11:     #715F00
+
+! GREEN
+URxvt*color2:      #00A250
+URxvt*color10:     #007427
+
+! CYAN
+URxvt*color6:      #00A4C1
+URxvt*color14:     #007693
+
+! BLUE
+URxvt*color4:      #208FFB
+URxvt*color12:     #0065CA
+
+! MAGENTA
+URxvt*color5:      #D160C4
+URxvt*color13:     #A03196
