@@ -71,9 +71,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set background=dark
-set t_Co=256
-let g:solarized_termcolors=256
+"set background=dark
+"set t_Co=256
+"let g:solarized_termcolors=256 "for situations where term colours are not set
+"to solarixed
 colorscheme solarized
 
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
