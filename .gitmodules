@@ -8,3 +8,4 @@
 [submodule "X/extras/powerline-fonts.git"]
 	path = X/extras/powerline-fonts.git
 	url = git://github.com/Lokaltog/powerline-fonts.git
+
