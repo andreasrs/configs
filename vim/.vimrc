@@ -15,7 +15,7 @@ Bundle 'joonty/vdebug'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/powerline.git'
+"Bundle 'Lokaltog/powerline.git'
 
 filetype plugin indent on
 syntax on
@@ -72,7 +72,7 @@ set shiftwidth=4
 set expandtab
 
 "set background=dark
-"set t_Co=256
+set t_Co=256
 "let g:solarized_termcolors=256 "for situations where term colours are not set
 "to solarixed
 colorscheme solarized
@@ -81,8 +81,8 @@ let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andre
 let g:ctrlp_working_path_mode = ''
 
 " powerline
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2 " always show powerline
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set laststatus=2 " always show powerline
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
