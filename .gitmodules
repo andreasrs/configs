@@ -9,3 +9,6 @@
 	path = X/extras/powerline-fonts.git
 	url = git://github.com/Lokaltog/powerline-fonts.git
 
+[submodule "zsh/oh-my-zsh.git"]
+	path = zsh/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git

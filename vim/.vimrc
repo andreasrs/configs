@@ -15,7 +15,7 @@ Bundle 'joonty/vdebug'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'Lokaltog/powerline.git'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 syntax on
@@ -44,7 +44,7 @@ let g:ctrlp_cmd = 'CtrlP'
 set autoindent
 set copyindent
 set number
-set shiftwidth=4
+" set shiftwidth=4
 set shiftround
 set showmatch
 set hlsearch
@@ -80,10 +80,33 @@ colorscheme solarized
 let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
 let g:ctrlp_working_path_mode = ''
 
-" powerline
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-"set laststatus=2 " always show powerline
-
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Airline
+let g:airline_powerline_fonts = 0
+let g:airline_theme='base16'
+
+let g:airline_symbols = {}
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+
+set laststatus=2
+set ttimeoutlen=50
+set noshowmode
+
+" == SHOW TABS ==
+let g:spacehi_tabcolor="ctermfg=1 cterm=underline"
+let g:spacehi_tabcolor=g:spacehi_tabcolor . " guifg=yellow gui=underline"
+
+function! s:SpaceHi()
+    syntax match spacehiTab /\t/ containedin=ALL
+    execute("highlight spacehiTab " . g:spacehi_tabcolor)
+    let b:spacehi = 1
+endfunction
+
+com! SpaceHi call s:SpaceHi()
 
