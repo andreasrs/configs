@@ -40,7 +40,6 @@ end
 -- Themes define colours, icons, and wallpapers
 -- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 beautiful.init(".config/awesome/themes/zenburn/theme.lua")
--- beautiful.init(".config/awesome/themes/fence/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "xterm"
@@ -95,8 +94,8 @@ if screen.count() > 1 then
         layout = { layouts[2], layouts[2], layouts[2] }
     }
 
-    tags[1] = awful.tag(tags.name, 1, tags.layout)
-    tags[2] = awful.tag(tagsSecondary.name, 2, tagsSecondary.layout)
+    tags[2] = awful.tag(tags.name, 2, tags.layout)
+    tags[1] = awful.tag(tagsSecondary.name, 1, tagsSecondary.layout)
 else
     tags = {
         name = { "code", "web", "irssi", "ssh", "gfx", "office", "media", "comms" },
@@ -137,6 +136,9 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+batterypanel = require("battery")
+batterypanel.add(wibox)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -216,6 +218,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
+    right_layout:add(mybatterypanel)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)

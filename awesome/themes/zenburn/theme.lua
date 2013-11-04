@@ -14,7 +14,7 @@ theme.wallpaper = ".config/awesome/wallpapers/blueredmosaic.jpg"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "terminus 10"
+theme.font      = "Terminus 8"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"

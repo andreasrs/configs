@@ -16,6 +16,8 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/powerline.git'
 
 filetype plugin indent on
 syntax on
