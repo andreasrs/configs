@@ -1,6 +1,5 @@
 URxvt*title:            urxvt
-URxvt.font:             xft:dina:pixelsize=14
-URxvt.boldFont:         xft:dina:bold:pixelsize=14
+URxvt*font:             xft:Dina:pixelsize=12
 Xft.autohint:           0
 Xft.lcdfilter:          lcddefault
 Xft.antialias:          1

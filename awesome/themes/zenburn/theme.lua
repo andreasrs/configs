@@ -8,13 +8,11 @@
 
 -- {{{ Main
 theme = {}
---theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
---theme.wallpaper = ".config/awesome/wallpapers/lights.jpg"
-theme.wallpaper = ".config/awesome/wallpapers/blueredmosaic.jpg"
+theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles
-theme.font      = "Terminus 8"
+theme.font      = "sans 8"
 
 -- {{{ Colors
 theme.fg_normal  = "#DCDCCC"
