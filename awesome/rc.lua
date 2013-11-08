@@ -94,8 +94,8 @@ if screen.count() > 1 then
         layout = { layouts[2], layouts[2], layouts[2] }
     }
 
-    tags[2] = awful.tag(tags.name, 2, tags.layout)
-    tags[1] = awful.tag(tagsSecondary.name, 1, tagsSecondary.layout)
+    tags[1] = awful.tag(tags.name, 1, tags.layout)
+    tags[2] = awful.tag(tagsSecondary.name, 2, tagsSecondary.layout)
 else
     tags = {
         name = { "code", "web", "irssi", "ssh", "gfx", "office", "media", "comms" },
