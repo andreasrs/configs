@@ -5,7 +5,7 @@ ZSH=$HOME/repositories/configs/zsh/oh-my-zsh.git
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="duellj"
+ZSH_THEME="darkblood"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,5 +45,6 @@ plugins=(git archlinux tmux)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-eval `dircolors ~/.dircolors`
+#eval `dircolors ~/.dircolors`
+eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
 
