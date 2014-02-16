@@ -5,7 +5,7 @@ ZSH=$HOME/repositories/configs/zsh/oh-my-zsh.git
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="darkblood"
+ZSH_THEME="dieter"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -46,5 +46,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 #eval `dircolors ~/.dircolors`
-eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
+#eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
+eval $( dircolors -b $HOME/repositories/configs/zsh/dircolors-solarized.git/dircolors.256dark )
 
+export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
