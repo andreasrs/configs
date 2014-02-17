@@ -17,6 +17,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'hsanson/vim-android'
 "Bundle 'Lokaltog/powerline.git'
 
 filetype plugin indent on
@@ -79,7 +80,7 @@ set expandtab
 "to solarixed
 colorscheme solarized
 
-let g:vdebug_options = {'path_maps': {'/home/andreass/repositories':'/home/andreass/media/spongebob/repositories', '/home/andreass/library':'/home/andreass/media/spongebob/library'}}
+let g:vdebug_options = {"path_maps":{"/home/andreass/repositories":"/home/andreass/media/vg-dev-01/repositories", "/home/andreass/library":"/home/andreass/media/vg-dev-01/library"}}
 let g:ctrlp_working_path_mode = ''
 
 " ctrlp
@@ -99,6 +100,10 @@ let g:airline_right_sep = '◀'
 set laststatus=2
 set ttimeoutlen=50
 set noshowmode
+
+" android
+let g:android_sdk_path = '/home/andreass/sdk/android-sdk-linux'
+let g:gradle_path = '/home/andreass/software/gradle-1.9'
 
 " == SHOW TABS ==
 let g:spacehi_tabcolor="ctermfg=1 cterm=underline"

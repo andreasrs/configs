@@ -49,4 +49,13 @@ source $ZSH/oh-my-zsh.sh
 #eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
 eval $( dircolors -b $HOME/repositories/configs/zsh/dircolors-solarized.git/dircolors.256dark )
 
-export PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
+# utils
+alias dualscreen=/home/andreass/util/dualscreen
+alias vgdev-mount=/home/andreass/util/vgdev01sshfs
+alias vgdev-xdebug=/home/andreass/util/vgdev01xdebug
+
+# such doge
+alias such=git
+alias very=git
+alias wow='git status'
+
