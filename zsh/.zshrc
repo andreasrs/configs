@@ -48,3 +48,12 @@ source $ZSH/oh-my-zsh.sh
 #eval `dircolors ~/.dircolors`
 eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
 
+# utils
+alias dualscreen=/home/andreass/util/dualscreen
+alias vgdev-mount=/home/andreass/util/vgdev01sshfs
+alias vgdev-xdebug=/home/andreass/util/vgdev01xdebug
+
+# such doge
+alias such=git
+alias very=git
+alias wow='git status'
