@@ -75,7 +75,7 @@ set shiftwidth=4
 set expandtab
 
 "set background=dark
-set t_Co=256
+"set t_Co=256
 "let g:solarized_termcolors=256 "for situations where term colours are not set
 "to solarixed
 colorscheme solarized

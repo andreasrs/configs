@@ -16,3 +16,9 @@
 [submodule "zsh/LS_COLORS.git"]
 	path = zsh/LS_COLORS.git
 	url = git@github.com:trapd00r/LS_COLORS.git
+[submodule "zsh/dircolors-solarized.git"]
+	path = zsh/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "awesome/themes/awesome-solarized"]
+	path = awesome/themes/awesome-solarized
+	url = https://github.com/cycojesus/awesome-solarized.git
