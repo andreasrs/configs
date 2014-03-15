@@ -76,8 +76,9 @@ set expandtab
 
 "set background=dark
 "set t_Co=256
-"let g:solarized_termcolors=256 "for situations where term colours are not set
+" let g:solarized_termcolors=256 "for situations where term colours are not set
 "to solarixed
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 let g:vdebug_options = {"path_maps":{"/home/andreass/repositories":"/home/andreass/media/vg-dev-01/repositories", "/home/andreass/library":"/home/andreass/media/vg-dev-01/library"}}
