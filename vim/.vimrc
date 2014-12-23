@@ -1,6 +1,5 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
 
 call vundle#rc()
@@ -18,6 +17,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'hsanson/vim-android'
+Bundle 'Shutnik/jshint2.vim'
 "Bundle 'Lokaltog/powerline.git'
 
 filetype plugin indent on
@@ -74,15 +74,20 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"set background=dark
+set background=dark
 "set t_Co=256
 " let g:solarized_termcolors=256 "for situations where term colours are not set
 "to solarixed
 let g:solarized_termtrans = 1
 colorscheme solarized
 
-let g:vdebug_options = {"path_maps":{"/home/andreass/repositories":"/home/andreass/media/vg-dev-01/repositories", "/home/andreass/library":"/home/andreass/media/vg-dev-01/library"}}
+let g:vdebug_options = {}
+let g:vdebug_options['path_maps'] = {"/home/andreass/repositories":"/home/andreas/media/vg-dev-01/repositories", "/home/andreass/library":"/home/andreas/media/vg-dev-01/library"}
+let g:vdebug_options['port'] = 8991
 let g:ctrlp_working_path_mode = ''
+
+" jshint on save
+let jshint2_save = 1
 
 " ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim

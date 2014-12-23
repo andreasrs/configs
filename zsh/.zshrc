@@ -53,6 +53,7 @@ eval $( dircolors -b $HOME/repositories/configs/zsh/dircolors-solarized.git/dirc
 alias dualscreen=/home/andreass/util/dualscreen
 alias vgdev-mount=/home/andreass/util/vgdev01sshfs
 alias vgdev-xdebug=/home/andreass/util/vgdev01xdebug
+alias tmux=tmux -2 -u
 
 # such doge
 alias such=git

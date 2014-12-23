@@ -44,6 +44,7 @@ beautiful.init(".config/awesome/themes/awesome-solarized/dark/theme.lua")
 -- This is used later as the default terminal and editor to run.
 -- terminal = "xterm"
 terminal = "urxvt"
+--terminal = "terminology"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -85,21 +86,21 @@ end
 --tags = {}
 if screen.count() > 1 then
     tags = {
-        name = { "code", "ssh", "gfx", "office", "media" },
+        name = { "code", "ssh", "gfx", "office"},
         layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
     }
 
     tagsSecondary = {
-        name = { "web", "irssi", "comms" },
-        layout = { layouts[2], layouts[2], layouts[2] }
+        name = { "web", "irssi", "comms", "media" },
+        layout = { layouts[2], layouts[2], layouts[2], layouts[2] }
     }
 
     tags[1] = awful.tag(tags.name, 1, tags.layout)
     tags[2] = awful.tag(tagsSecondary.name, 2, tagsSecondary.layout)
 else
     tags = {
-        name = { "code", "web", "irssi", "ssh", "gfx", "office", "media", "comms" },
-        layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
+        name = { "code", "web", "irssi", "ssh", "gfx", "office", "comms" },
+        layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
     }
 
     tags[1] = awful.tag(tags.name, 1, tags.layout)

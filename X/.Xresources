@@ -2,8 +2,10 @@
 URxvt*buffered: true
 URxvt*cursorBlink: true
 URxvt*underlineColor: yellow
-!URxvt*font:  xft:inconsolata:size=11:antialias=true
-URxvt*font: xft:ohsnap:size=11:antialias=true
+!URxvt*font:  xft:inconsolata:size=14:antialias=true
+!URxvt*font: xft:ohsnap:size=14:antialias=true
+!URxvt*font: xft:GohuFont:Style=Regular:pixelsize=14
+URxvt*font: xft:Dina:Style=Regular:pixelsize=11
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -14,8 +16,8 @@ URxvt*termName: rxvt-unicode-256color
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: chromium
 URxvt.matcher.button: 1
-URxvt*shading: 20
-!!URxvt*transparent: true
+URxvt*shading: 10
+URxvt*transparent: true
 
 !! drop in Solarized colorscheme for Xresources/Xdefaults
 
