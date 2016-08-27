@@ -1,125 +1,151 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-"let Vundle manage Vundle | required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-"mah bundles
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'joonty/vdebug'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'bling/vim-airline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'hsanson/vim-android'
-Bundle 'Shutnik/jshint2.vim'
-"Bundle 'Lokaltog/powerline.git'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
-filetype plugin indent on
+" colours
+set background=dark
+colorscheme solarized
+
+" basics
 syntax on
-
-inoremap <Nul> <C-x><C-o>
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
-autocmd BufWritePre * :%s/\s\+$//e
-
-"autocmd FileType php nnoremap <C-P> :!php %<CR>
-autocmd FileType php nnoremap <C-L> :!php -l %<CR>
-autocmd FileType php nnoremap <C-U> :!phpunit %<CR>
-
-autocmd FileType php nmap <C-d> :call JCommentWriter()<CR>
-
-nmap <silent> <F6> :set number!<CR>
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-set autoindent
-set copyindent
-set number
-" set shiftwidth=4
-set shiftround
-set showmatch
-set hlsearch
-set incsearch
-
-set history=1000
-set undolevels=1000
-set title
-set visualbell
-set noerrorbells
-
-set nobackup
-set noswapfile
-
-set pastetoggle=<F2>
-
-map tn :tabnew<CR><Esc>
-map tc :tabclose<CR><Esc>
-"map <S-h> gT
-"map <S-l> gt
-map nt :NERDTreeToggle<CR><Esc>
-
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set backspace=2
+set relativenumber
+set number
 
-set background=dark
-"set t_Co=256
-" let g:solarized_termcolors=256 "for situations where term colours are not set
-"to solarixed
-let g:solarized_termtrans = 1
-colorscheme solarized
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
 
-let g:vdebug_options = {}
-let g:vdebug_options['path_maps'] = {"/home/andreass/repositories":"/home/andreas/media/vg-dev-01/repositories", "/home/andreass/library":"/home/andreas/media/vg-dev-01/library"}
-let g:vdebug_options['port'] = 8991
-let g:ctrlp_working_path_mode = ''
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" jshint on save
-let jshint2_save = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_javascript_checkers = ['eslint']
 
-" ctrlp
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:syntastic_error_symbol = '❌'
+let g:syntastic_style_error_symbol = '⁉️'
+let g:syntastic_warning_symbol = '⚠️'
+let g:syntastic_style_warning_symbol = '💩'
 
-" Airline
-let g:airline_powerline_fonts = 0
-let g:airline_theme='base16'
+" nerd tree
+map <C-n> :NERDTreeToggle<CR>
 
-let g:airline_symbols = {}
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
+" ctrl p
+map <C-p> :CtrlP<CR>
 
-set laststatus=2
-set ttimeoutlen=50
-set noshowmode
+" php lint
+map <C-B> :!php -l %<CR>
 
-" android
-let g:android_sdk_path = '/home/andreass/sdk/android-sdk-linux'
-let g:gradle_path = '/home/andreass/software/gradle-1.9'
+" window resize binds
+nmap <left>  :3wincmd <<cr>
+nmap <right> :3wincmd ><cr>
+nmap <up>    :3wincmd +<cr>
+nmap <down>  :3wincmd -<cr>
 
-" == SHOW TABS ==
-let g:spacehi_tabcolor="ctermfg=1 cterm=underline"
-let g:spacehi_tabcolor=g:spacehi_tabcolor . " guifg=yellow gui=underline"
+" neocomplete
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-function! s:SpaceHi()
-    syntax match spacehiTab /\t/ containedin=ALL
-    execute("highlight spacehiTab " . g:spacehi_tabcolor)
-    let b:spacehi = 1
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {'default' : ''}
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
-com! SpaceHi call s:SpaceHi()
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
 
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'

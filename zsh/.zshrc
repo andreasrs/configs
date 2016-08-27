@@ -5,11 +5,7 @@ ZSH=$HOME/repositories/configs/zsh/oh-my-zsh.git
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dieter"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -40,23 +36,62 @@ ZSH_THEME="dieter"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux tmux)
+plugins=(tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-#eval `dircolors ~/.dircolors`
-#eval $( dircolors -b $HOME/repositories/configs/zsh/LS_COLORS.git/LS_COLORS )
-eval $( dircolors -b $HOME/repositories/configs/zsh/dircolors-solarized.git/dircolors.256dark )
+# brew nvm
+export NVM_DIR="$HOME/.nvm"
+  . "$(brew --prefix nvm)/nvm.sh"
 
 # utils
 alias dualscreen=/home/andreass/util/dualscreen
 alias vgdev-mount=/home/andreass/util/vgdev01sshfs
 alias vgdev-xdebug=/home/andreass/util/vgdev01xdebug
 alias tmux=tmux -2 -u
+alias docker-rm-dangling='docker rmi $(docker images -f "dangling=true" -q)'
+
+# mac is weird
+alias chromium='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 # such doge
 alias such=git
 alias very=git
 alias wow='git status'
+alias tmux='tmux -2 -u'
+alias mount-vgdev='sshfs -p 22 andreass@vg-dev-01:/home/andreass ~/Volumes/vgdev -oauto_cache,reconnect,defer_permissions,noappledouble,negative_vncache,volname=vgdev,umask=0002'
+alias docker-php7-cli='docker run -i -t -v $(pwd):/src/app php:7.0.6-cli /bin/bash'
 
+# vulture stuffs
+export HOST_ROC_PORT=3001
+export ROC_PORT=3001
+export HOST_APACHE_PORT=3000
+export APACHE_PORT=3000
+export VULTURE_HOST=pro
+
+# vi mode
+bindkey -v
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
+
+# vi mode indiciator
+precmd() { RPROMPT="" }
+function zle-line-init zle-keymap-select {
+   VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+   zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# reduce key timeout
+export KEYTIMEOUT=1
+
+# umask
+umask 0002
