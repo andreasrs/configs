@@ -11,6 +11,24 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- Custom widgets
+local net_widgets = require("net_widgets")
+net_wireless = net_widgets.wireless({interface="wlp3s0", font="monospace"})
+net_wired = net_widgets.indicator({
+    interfaces  = {"enp2s25"},
+    timeout     = 5,
+    font        = "monospace"
+})
+
+local assault = require("assault")
+
+assault_widget = assault({
+    critical_level = 0.15,
+    width = 20,
+    height= 10,
+    charging_color = "#00aa00"
+})
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -191,6 +209,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(assault_widget)
+    right_layout:add(net_wired)
+    right_layout:add(net_wireless)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
