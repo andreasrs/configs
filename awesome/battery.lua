@@ -1,1 +1,1 @@
-/home/andreas/repositories/awesome-widgets/battery.lua
+/home/andreas/repositories/github/awesome-widgets/battery.lua

@@ -81,17 +81,17 @@ if beautiful.wallpaper then
 end
 -- }}}
 
--- {{{ Tags
+-- {{{ Tags|
 -- Define a tag table which hold all screen tags.
 --tags = {}
 if screen.count() > 1 then
     tags = {
-        name = { "code", "ssh", "gfx", "office"},
+        name = { "code", "web", "ssh", "gfx", "office"},
         layout = { layouts[2], layouts[2], layouts[2], layouts[2], layouts[2] }
     }
 
     tagsSecondary = {
-        name = { "web", "irssi", "comms", "media" },
+        name = { "web", "utils", "comms", "media" },
         layout = { layouts[2], layouts[2], layouts[2], layouts[2] }
     }
 
@@ -119,6 +119,8 @@ myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "thunar", "thunar" },
+   { "spotify", "spotify" },
+   { "volume control", "pavucontrol" },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
@@ -397,12 +399,16 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "Spotify" },
        properties = { tag = tags[1][7], floating = false } },
+    { rule = { class = "pavucontrol" },
+       properties = { tag = tags[1][7], floating = false } },
     { rule = { class = "Skype" },
        properties = { tag = skypeTag, floating = false } },
     { rule = { class = "Chromium" },
        properties = { tag = chromiumTag, floating = false } },
     { rule = { class = "Blender" },
        properties = { tag = tags[1][5], floating = false } },
+   { rule = { class = "Atom" },
+      properties = { tag = tags[1][1], floating = false } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },

@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/repositories/configs/zsh/oh-my-zsh.git
+ZSH=$HOME/repositories/github/configs/zsh/oh-my-zsh.git
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -39,20 +39,17 @@ ZSH_THEME="agnoster"
 plugins=(tmux)
 
 source $ZSH/oh-my-zsh.sh
+ # source $HOME/.nvm/nvm.sh
 
-# brew nvm
-export NVM_DIR="$HOME/.nvm"
-  . "$(brew --prefix nvm)/nvm.sh"
+# Customize to your needs...
+eval $( dircolors -b $HOME/repositories/github/configs/zsh/dircolors-solarized.git/dircolors.256dark )
 
 # utils
-alias dualscreen=/home/andreass/util/dualscreen
-alias vgdev-mount=/home/andreass/util/vgdev01sshfs
-alias vgdev-xdebug=/home/andreass/util/vgdev01xdebug
 alias tmux=tmux -2 -u
 alias docker-rm-dangling='docker rmi $(docker images -f "dangling=true" -q)'
 
 # mac is weird
-alias chromium='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+# alias chromium='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 
 # such doge
 alias such=git
@@ -95,3 +92,24 @@ export KEYTIMEOUT=1
 
 # umask
 umask 0002
+alias dualscreen=/home/andreas/util/dualscreen.sh
+alias vgdev-mount=/home/andreas/util/vgdev-mount.sh
+alias netreset="sudo ip link set enp0s25 down && sudo ip link set enp0s25 up && sudo systemctl restart dhcpcd@enp0s25"
+alias vpn="sudo openvpn /home/andreas/util/client-duo.ovpn"
+alias vpnon="sudo mv /etc/resolv.conf.tail /etc/resolv.conf.head && netreset"
+alias vpnoff="sudo mv /etc/resolv.conf.head /etc/resolv.conf.tail && netreset"
+alias wifihome="sudo netctl start home"
+alias brightness="xbacklight -set 50"
+alias lockscreen="xscreensaver-command -lock"
+alias sshkey="bash -c 'eval `ssh-agent`' && ssh-add .ssh/id_rsa"
+alias vmsphere="rdesktop vg-win-01.int.vgnett.no"
+alias coderoc="cd /stash/code/github/rocjs"
+
+eval `keychain --eval id_rsa`
+
+bindkey -v
+bindkey "^R" history-incremental-search-backward
+
+# export PATH=$HOME/.npm/bin:$PATH
+
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
