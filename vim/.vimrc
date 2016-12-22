@@ -59,14 +59,16 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
+let g:syntastic_error_symbol =  ''
+let g:syntastic_style_error_symbol = ''
+let g:syntastic_warning_symbol = ''
+let g:syntastic_style_warning_symbol = ''
+
+" let g:syntastic_debug = 1
 
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
@@ -76,6 +78,9 @@ map <C-p> :CtrlP<CR>
 
 " php lint
 map <C-B> :!php -l %<CR>
+
+" synastic
+map <C-L> :SyntasticCheck<CR>
 
 " window resize binds
 nmap <left>  :3wincmd <<cr>

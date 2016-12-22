@@ -5,6 +5,8 @@ ZSH=$HOME/repositories/github/configs/zsh/oh-my-zsh.git
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+# ZSH_THEME="norm"
+DEFAULT_USER="andreas"
 ZSH_THEME="agnoster"
 
 # Set to this to use case-sensitive completion
@@ -95,9 +97,8 @@ umask 0002
 alias dualscreen=/home/andreas/util/dualscreen.sh
 alias vgdev-mount=/home/andreas/util/vgdev-mount.sh
 alias netreset="sudo ip link set enp0s25 down && sudo ip link set enp0s25 up && sudo systemctl restart dhcpcd@enp0s25"
-alias vpn="sudo openvpn /home/andreas/util/client-duo.ovpn"
-alias vpnon="sudo mv /etc/resolv.conf.tail /etc/resolv.conf.head && netreset"
-alias vpnoff="sudo mv /etc/resolv.conf.head /etc/resolv.conf.tail && netreset"
+alias netcabled="sudo systemctl start dhcpcd@enp0s25"
+alias vpn="sudo openvpn /home/andreas/util/client.ovpn"
 alias wifihome="sudo netctl start home"
 alias brightness="xbacklight -set 50"
 alias lockscreen="xscreensaver-command -lock"
@@ -110,6 +111,5 @@ eval `keychain --eval id_rsa`
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
-# export PATH=$HOME/.npm/bin:$PATH
-
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source /usr/share/nvm/init-nvm.sh
