@@ -15,7 +15,7 @@ local menubar = require("menubar")
 local net_widgets = require("net_widgets")
 net_wireless = net_widgets.wireless({interface="wlp3s0", font="monospace"})
 net_wired = net_widgets.indicator({
-    interfaces  = {"enp2s25"},
+    interfaces  = {"enp0s25"},
     timeout     = 5,
     font        = "monospace"
 })
@@ -23,9 +23,13 @@ net_wired = net_widgets.indicator({
 local assault = require("assault")
 
 assault_widget = assault({
-    critical_level = 0.15,
+    battery = "BAT0",
+    adapter = "AC",
+    critical_level = 0.10,
     width = 20,
     height= 10,
+    font = "Inconsolata",
+    normal_color = "#558800",
     charging_color = "#00aa00"
 })
 
@@ -60,7 +64,7 @@ beautiful.init(".config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
-editor = os.getenv("EDITOR") or "nano"
+editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -115,7 +119,18 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "terminal", terminal },
+                                    { "chrome", "chromium" },
+                                    { "edit", editor_cmd },
+                                    { "files", "thunar" },
+                                    { "vault", "keepassx" },
+                                    { "slack", "slack" },
+                                    { "spotify", "spotify" },
+                                    { "audio", "pavucontrol" },
+                                    { "node", terminal .. " -e \"node -i\"" },
+                                    { "screens", "arandr" },
+                                    { "vpn", terminal .. " -e \"openvpn ~/util/client.ovpn\"" },
+                                    { "off", "poweroff" },
                                   }
                         })
 

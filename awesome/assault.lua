@@ -7,6 +7,8 @@ local beautiful = require("beautiful")
 local lgi = require("lgi")
 local cairo = lgi.cairo
 local Pango = lgi.Pango
+local naughty = require("naughty")
+
 
 local assault = { mt = {} }
 
@@ -109,6 +111,7 @@ end
 local battery_text_generate = function (text, font)
 	local surface = cairo.ImageSurface(cairo.Format.A8, 100, 100)
 	local cr = cairo.Context(surface)
+
 	cr:new_path()
 	cr:select_font_face(font:get_family(), cairo.FontSlant.NORMAL, cairo.FontWeight.NORMAL)
 	cr:set_font_size(font:get_size() / Pango.SCALE)
@@ -120,7 +123,6 @@ end
 
 local battery_text_draw = function (cr, args, text)
 	local font = Pango.FontDescription.from_string(args.font)
-	--font:set_size(10)
 
 	cr:select_font_face(font:get_family(), cairo.FontSlant.NORMAL, cairo.FontWeight.NORMAL)
 	cr:set_font_size(font:get_size() / Pango.SCALE)
@@ -177,9 +179,13 @@ function assault.draw (assault, wibox, cr, width, height)
 	if acpi_battery_is_present(data[assault].battery) then
 		if acpi_battery_is_charging(data[assault].battery) then
 			draw_color = color(data[assault].charging_color)
-		elseif percent <= data[assault].critical_level then
-			draw_color = color(data[assault].critical_color)
-		end
+        elseif percent <= data[assault].critical_level then
+            naughty({
+                text = "Battery critical!",
+                timeout = 1
+            })
+            draw_color = color(data[assault].critical_color)
+        end
 	end
 
 	-- Draw fill
