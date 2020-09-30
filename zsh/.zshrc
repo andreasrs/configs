@@ -69,6 +69,16 @@ export KEYTIMEOUT=1
 bindkey -v
 bindkey "^R" history-incremental-search-backward
 
+# locale
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # utils
 alias docker-rm-dangling='docker rmi $(docker images -f "dangling=true" -q)'
 
@@ -76,5 +86,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export GEM_HOME=/Users/andreas/.gem
-export PATH="$GEM_HOME/bin:$PATH"
+export PATH="$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin:$HOME/.local/bin:$PATH"
