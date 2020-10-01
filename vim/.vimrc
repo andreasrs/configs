@@ -41,6 +41,16 @@ set backspace=2
 set relativenumber
 set number
 set splitbelow
+let mapleader=','
+
+" vim file locations
+set backupdir=~/.vim/backup// " the double // avoids name collisions
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
+" ripgrep
+set grepprg=rg\ --vimgrep
+set grepformat=%f:%l:%c:%m
 
 " nerd tree
 map <C-n> :NERDTreeToggle<CR>
