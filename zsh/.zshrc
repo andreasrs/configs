@@ -38,7 +38,7 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(tmux)
+plugins=(tmux deno)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,8 +82,12 @@ export LC_ALL="en_US.UTF-8"
 # utils
 alias docker-rm-dangling='docker rmi $(docker images -f "dangling=true" -q)'
 
+# google cloud tools (brew cask)
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export PATH="$HOME/.stack/programs/x86_64-osx/ghc-8.2.2/bin:$HOME/.local/bin:$PATH"
+export EDITOR=vim
