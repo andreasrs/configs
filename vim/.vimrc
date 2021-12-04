@@ -13,6 +13,7 @@ set encoding=utf-8
 
 filetype plugin indent on    " required
 
+set mouse=a
 let mapleader=","
 
 " colours
@@ -55,7 +56,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:vim_json_syntax_conceal = 0
 
 " fzf
-noremap <c-p> :Ag<cr>
+noremap <c-g> :Ag<cr>
+noremap <c-p> :GFiles<cr>
 
 " coc https://github.com/neoclide/coc.nvim/README.md
 "
